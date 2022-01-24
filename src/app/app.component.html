@@ -1,0 +1,44 @@
+<div class="form-container" *ngIf="isAdded==false" >
+  <div class="form">
+    <form class="usernameForm">
+      <input id="usernameInput" [(ngModel)]="username" name="username" placeholder="enter username">
+      <button id="usernameBtn" (click)="addUsername()">Enter the chat room</button>
+    </form>
+    
+  </div>
+</div>
+
+
+  
+
+
+<div class="app-container"  *ngIf="isAdded==true">
+  <div class="sidebar">
+    <p id="userHelper"><strong>Active Users</strong></p>
+    <hr>
+    <div class="users" *ngFor="let user of users">
+      {{user.username}}
+    </div>
+  </div>
+  <div class="msg-container">
+    <div class="messages" *ngFor="let msg of messages">
+      <div class="user">
+        {{msg.username}}: 
+      </div>
+      <div class="msg">
+        <p> {{msg.message}}</p>
+        <hr>
+      </div>
+     
+    </div>
+
+    <form (submit)="submitMsg()">
+      <textarea placeholder="Input message" name="message" [(ngModel)]="message"></textarea> 
+      <button type="submit">Send</button>
+    </form>
+  </div>
+  
+</div>
+
+
+<!-- [value]="message" (change)="message = $event.target.value"  -->

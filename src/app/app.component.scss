@@ -1,0 +1,106 @@
+$color-blue: #3D72A4;
+$color-white: #e1e1e1;
+$color-darkBlue: #183d60;
+
+.form-container{
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .form{
+        width: 80%;
+        height: 80vh;
+        border: 1px solid $color-blue;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .usernameForm{
+            display: flex;
+            #usernameBtn{
+                border: 1px solid $color-darkBlue;
+                background-color: $color-blue;
+                color: #fff;
+                border-radius: 5px;
+                cursor: pointer;
+                margin-left: 10px;
+                &:hover{
+                    border: 1px solid $color-blue;
+                    background-color: $color-white;
+                    color: $color-blue;
+                }
+            
+            }
+            
+            #usernameInput{
+                border-radius: 5px;
+            }
+        }
+        
+    }
+}
+
+
+.app-container{
+    display: flex;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    .sidebar{
+        width: 200px;
+        padding: 20px 5px;
+        background-color: $color-blue;
+        color: $color-white;
+    }
+    .msg-container{
+        width: 100%;
+        max-width: 100%;
+        border: 3px solid $color-darkBlue;
+        position: relative;
+        overflow-y: hidden;
+        overflow-x: auto;
+        
+        .messages{
+            padding-left: 20px;
+            display: flex;
+            .msg{
+                width: 90%;
+                overflow-wrap: break-word;
+                font-size: .8rem;
+            }
+        }
+        .user{
+            font-size: .9rem;
+            font-weight: bold;
+        }
+        form{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 25px;
+            textarea{
+                width: 80%;
+                min-height: 100px;
+            }
+            button{
+                border: 0px;
+                background-color: $color-blue;
+                color: $color-white;
+                width: 80px;
+                height: 30px;
+                position: relative;
+                bottom: 50px;
+                left: 50px;
+                transition: all .5s;
+                &:hover{
+                    background-color: $color-darkBlue;
+                    box-shadow: 0px 0px 10px 2px $color-blue;
+                    transition: all .5s;
+                }
+            }
+        }
+    }
+}
+
